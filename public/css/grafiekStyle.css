@@ -1,0 +1,32 @@
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.buttonWeek {
+    border-radius: 8px;
+    /* border: 1px solid black; */
+    box-shadow: 0.7px 0.7px 0.7px rgba(38, 38, 38, 0.422);
+    padding: 7px;
+    text-decoration: none;
+    background-color: #3B76AD;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+.buttonWeek:hover {
+    background-color: #769DC2;
+    transition: 0.4s ease;
+}
+
+.myPlot{
+    width: 80%;
+    display: flex;
+    justify-self: center;
+}
+
+.left{
+    display: flex;
+    
+}

@@ -1,0 +1,399 @@
+body {
+  font-family: "Poppins", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #e0f7fa;
+  color: #253745;
+}
+
+.navbar {
+  width: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #39709a;
+  height: 3.75rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 0.4375rem 1.8125rem 0;
+  color: white;
+  box-sizing: border-box;
+}
+
+.nav-left {
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.menubtn {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+  color: white;
+  transition: background-color 0.2s, transform 0.15s;
+}
+
+.menubtn:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+  transform: scale(1.05);
+}
+
+.menubtn:active {
+  transform: scale(0.95);
+}
+
+.hamburger-icon {
+  display: block;
+  stroke: white;
+}
+
+.nav-title {
+  text-align: center;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.nav-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-right-spacer {
+  margin-right: 20px;
+  width: 38px;
+}
+
+/* Zorgt dat de titel exact in het midden van de navbar zweeft */
+.navbar>p {
+  text-align: center;
+}
+
+#profile-pic {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#userOvervieuwbtn {
+  background-color: rgb(148, 148, 237);
+  color: white;
+}
+
+.profile-box {
+  margin-left: 30px;
+  display: flex;
+}
+
+/* ========================================================
+   Slide-out Drawer Menu
+   ======================================================== */
+
+.slideout-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9998;
+}
+
+.slideout-backdrop.open {
+  display: block;
+}
+
+.slideout-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  max-width: 85vw;
+  height: 100%;
+  background-color: #39709a;
+  color: white;
+  transform: translateX(-100%);
+  transition: transform 0.25s ease;
+  z-index: 9999;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.25) 3px 0 10px 0;
+}
+
+.slideout-drawer.open {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(0, 0, 0, 0.12);
+}
+
+.drawer-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.drawer-pfp {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  background-color: white;
+}
+
+.drawer-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.drawer-username {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+}
+
+.drawer-role {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1px 7px;
+  border-radius: 4px;
+  color: white;
+  width: fit-content;
+}
+
+.drawer-close-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: background-color 0.15s;
+}
+
+.drawer-close-btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.drawer-menu {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex: 1;
+  padding: 8px 0;
+}
+
+.drawer-category {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #d1eff5;
+  padding: 14px 18px 4px 18px;
+}
+
+.drawer-link {
+  display: block;
+  padding: 11px 18px;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background-color 0.15s, padding-left 0.15s;
+}
+
+.drawer-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-left-color: white;
+  padding-left: 22px;
+}
+
+.drawer-link.active {
+  background-color: rgba(0, 0, 0, 0.18);
+  border-left-color: white;
+  font-weight: 600;
+}
+
+.drawer-footer {
+  padding: 16px 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.drawer-logout-btn {
+  display: block;
+  text-align: center;
+  background-color: #637381;
+  color: white;
+  padding: 9px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.drawer-logout-btn:hover {
+  background-color: #505d68;
+}
+
+
+/* login */
+.login-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  padding-left: 4.375rem;
+  box-sizing: border-box;
+}
+
+.login-panel {
+  width: 20rem;
+  background: #dfe5e7;
+  border: 0.0625rem solid rgba(37, 55, 69, 0.15);
+  border-radius: 1rem;
+  padding: 1.875rem 1.75rem;
+}
+
+.login-panel h1 {
+  margin: 0 0 1.25rem;
+  font-size: 2rem;
+  color: #253745;
+}
+
+.login-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.login-panel label {
+  font-size: 0.9rem;
+  color: #253745;
+}
+
+.login-panel input {
+  border: 0.0625rem solid #9aa7ad;
+  border-radius: 0.625rem;
+  padding: 0.625rem 0.75rem;
+  background: #f4f7f8;
+  color: #253745;
+  font: inherit;
+}
+
+.login-panel input[type="submit"] {
+  width: fit-content;
+  margin-top: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  border: none;
+  background: #253745;
+  color: white;
+  border-radius: 62.4375rem;
+  cursor: pointer;
+}
+
+.login-error {
+  min-height: 1.25rem;
+  font-size: 0.85rem;
+  color: #7a2d2d;
+}
+
+/* end login */
+
+
+
+#dropdownMenu {
+  opacity: 0;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 20px;
+  padding: 0;
+  max-height: 0px;
+  list-style: none;
+  transition: 0.4s;
+  pointer-events: none;
+}
+
+#dropdownMenu.visible {
+  opacity: 1;
+  max-height: 500px;
+  pointer-events: all;
+}
+
+#dropdownMenu li {
+  /* lage z index, zodat hij nergens boven komt terwijl hij onzichtbaar is */
+  z-index: 0;
+  transform: translateY(-5px);
+  padding: 20px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.306);
+
+  &:hover {
+    background-color: rgb(237, 237, 237);
+  }
+}
+
+
+.logoutbtn {
+
+  background-color: gray;
+  color: white;
+  width: fit-content;
+  height: fit-content;
+}
+
+.btnbox {
+  margin-right: 10px;
+  gap: 10px;
+  
+  display: flex;
+  align-items: flex-end;
+  justify-content:flex-end;
+
+}
+
+.btn {
+  display: inline-block;
+  transition: 0.3s !important;
+  /* Specifiek op transform zetten */
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+ 
+  height: 15px;
+
+  /* Voorkomt het verspringen/blurren van tekst */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.btn:hover {
+  transform: scale(1.05) !important;
+}

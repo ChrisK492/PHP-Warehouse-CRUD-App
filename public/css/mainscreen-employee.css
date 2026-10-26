@@ -1,0 +1,11 @@
+body {
+    text-align: center;
+}
+
+#reader {
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    border: none !important;
+
+}

@@ -1,0 +1,59 @@
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+thead {
+    background-color: black;
+    color: white;
+
+}
+
+td,
+th {
+    text-align: center;
+    padding: 10px;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgb(223, 223, 223);
+
+}
+
+tbody tr:nth-child(odd) {
+    background-color: white;
+
+}
+
+
+.editbtn {
+    background-color: rgb(96, 96, 249);
+    color: white;
+}
+
+
+.deletebtn {
+    background-color: rgb(255, 0, 0);
+    color: white;
+}
+
+.adduserbtn {
+    display: block;
+   
+    width: fit-content;
+   
+    background-color: rgb(64, 64, 124);
+    color: white;
+}
+
+#usersbox {
+    position: relative;
+    width: 80%;
+    justify-self: center;
+ 
+      overflow-x: auto;
+}
+
+
